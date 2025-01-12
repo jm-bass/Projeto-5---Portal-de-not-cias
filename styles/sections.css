@@ -2,6 +2,24 @@
   img {
     height: 100%;
     object-fit: cover; /* cobre toda o espaço sem distocer */
+  }
+
+  /* aqui irá se aplicar um degradê */
+  .card {
     border-radius: 4px;
+    overflow/*é o transbordamento*/: hidden/*esconde*/;
+    position: relative;
+
+    &/*& substitui o .card*/::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      top: 50%;
+      background: linear-gradient(
+        180deg, /*graus*/
+        transparent 0%, /*a cor que sai*/
+        #020617 100%
+      );
+    }
   }
 }
